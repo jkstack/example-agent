@@ -1,9 +1,12 @@
 package core
 
+import "github.com/jkstack/anet"
+
 type Agent struct {
 	cfgDir  string
 	cfg     *Configure
 	version string
+	chWrite chan *anet.Msg
 }
 
 func New(dir, version string) *Agent {
@@ -11,6 +14,7 @@ func New(dir, version string) *Agent {
 		cfgDir:  dir,
 		cfg:     load(dir),
 		version: version,
+		chWrite: make(chan *anet.Msg),
 	}
 }
 
