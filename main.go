@@ -1,15 +1,18 @@
 package main
 
 import (
+	"example/internal"
 	"flag"
 	"fmt"
 	"os"
+	"path/filepath"
 	rt "runtime"
 
-	"example/core"
-
+	"github.com/jkstack/jkframe/utils"
 	agent "github.com/jkstack/libagent"
 )
+
+const agentName = "example-agent"
 
 var (
 	version      string = "0.0.0"
@@ -38,19 +41,54 @@ func main() {
 		return
 	}
 
-	if len(*cf) == 0 {
-		fmt.Println("missing -conf argument")
-		os.Exit(1)
-	}
-
-	app := core.New(*cf, version)
-
 	switch *act {
 	case "install":
-		agent.RegisterService(app)
+		if len(*cf) == 0 {
+			fmt.Println("missing -conf argument")
+			os.Exit(1)
+		}
+
+		dir, err := filepath.Abs(*cf)
+		utils.Assert(err)
+
+		dummy := agent.NewDummyApp(agentName, dir)
+
+		err = agent.RegisterService(dummy)
+		if err != nil {
+			fmt.Printf("can not register service: %v\n", err)
+			return
+		}
+		fmt.Println("register service success")
 	case "uninstall":
-		agent.UnregisterService(app)
+		err := agent.UnregisterService(agent.NewDummyApp(agentName, ""))
+		if err != nil {
+			fmt.Printf("can not unregister service: %v\n", err)
+			return
+		}
+		fmt.Println("unregister service success")
+	case "start":
+		err := agent.Start(agent.NewDummyApp(agentName, ""))
+		if err != nil {
+			fmt.Printf("can not start service: %v\n", err)
+			return
+		}
+		fmt.Println("start service success")
+	case "stop":
+		err := agent.Stop(agent.NewDummyApp(agentName, ""))
+		if err != nil {
+			fmt.Printf("can not stop service: %v\n", err)
+			return
+		}
+		fmt.Println("stop service success")
 	default:
-		agent.Run(app)
+		if len(*cf) == 0 {
+			fmt.Println("missing -conf argument")
+			os.Exit(1)
+		}
+
+		dir, err := filepath.Abs(*cf)
+		utils.Assert(err)
+
+		agent.Run(internal.New(dir, version))
 	}
 }
