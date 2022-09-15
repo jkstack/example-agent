@@ -2,10 +2,12 @@ module example
 
 go 1.17
 
+replace github.com/kardianos/service => github.com/lwch/service v1.2.1-1
+
 require (
-	github.com/jkstack/anet v0.0.0-20220805084406-b2b99e224f87
-	github.com/jkstack/jkframe v1.0.6
-	github.com/jkstack/libagent v1.0.1
+	github.com/jkstack/anet v0.0.0-20220902094756-01577713a50a
+	github.com/jkstack/jkframe v1.0.8
+	github.com/jkstack/libagent v1.1.3
 )
 
 require (
