@@ -3,7 +3,7 @@
 OUTDIR=$(shell realpath release)
 
 PROJ=example-agent
-VERSION=1.0.1
+VERSION=1.0.2
 TIMESTAMP=`date +%s`
 
 MAJOR=`echo $(VERSION)|cut -d'.' -f1`
@@ -22,6 +22,7 @@ LDFLAGS="-X 'main.gitBranch=$(BRANCH)' \
 
 all: distclean linux.amd64 linux.386 windows.amd64 windows.386 msi.amd64 msi.386
 	cp CHANGELOG.md $(OUTDIR)/CHANGELOG.md
+	cp conf/manifest.yaml $(OUTDIR)manifest.yaml
 	rm -fr $(OUTDIR)/$(VERSION)/etc $(OUTDIR)/$(VERSION)/opt
 version:
 	@echo $(VERSION)
