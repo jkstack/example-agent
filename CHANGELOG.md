@@ -11,3 +11,7 @@
 ## 1.0.2
 
 增加manifest.yaml配置信息描述文件
+
+## 1.0.3
+
+修正manifest.yaml中的id字段缺少type的问题
