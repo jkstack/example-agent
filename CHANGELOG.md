@@ -24,3 +24,8 @@
 
 1. 修改打包流程，增加manifest-lint过程
 2. 修正manifest.yaml中basic.log.target字段默认值设置问题
+
+## 1.0.6
+
+1. 修改命令行交互方式
+2. 去除go1.17版本支持

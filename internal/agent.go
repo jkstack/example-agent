@@ -2,6 +2,8 @@ package internal
 
 import "github.com/jkstack/anet"
 
+var AgentName string
+
 type Agent struct {
 	cfgDir  string
 	cfg     *Configure
