@@ -19,3 +19,8 @@
 ## 1.0.4
 
 修改配置文件，增加basic前缀
+
+## 1.0.5
+
+1. 修改打包流程，增加manifest-lint过程
+2. 修正manifest.yaml中basic.log.target字段默认值设置问题
