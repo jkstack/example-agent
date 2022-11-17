@@ -31,3 +31,4 @@
 ## 更多示例
 
 1. [metrics-agent](https://github.com/jkstack/metrics-agent): 监控数据采集
+2. [exec-agent](https://github.com/jkstack/exec-agent): 远程执行脚本，文件分发
