@@ -24,6 +24,7 @@ Unicode True
 
 ; MUI 1.67 compatible ------
 !include "MUI.nsh"
+!include "LogicLib.nsh"
 
 ; MUI Settings
 !define MUI_ABORTWARNING
@@ -71,6 +72,10 @@ Function .onInit
     StrCpy $INSTDIR $INSTDIR -4
   ${EndIf}
 FunctionEnd
+
+Section "-LogSetOn"
+  LogSet on
+SectionEnd
 
 Section "MainSection" SEC01
   SetOutPath "$INSTDIR"
