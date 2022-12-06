@@ -32,3 +32,9 @@
 
 1. [metrics-agent](https://github.com/jkstack/metrics-agent): 监控数据采集
 2. [exec-agent](https://github.com/jkstack/exec-agent): 远程执行脚本，文件分发
+
+## 开源社区
+
+文档知识库：https://jkstack.github.io/
+
+<img src="docs/wechat_QR.jpg" height=200px width=200px />
