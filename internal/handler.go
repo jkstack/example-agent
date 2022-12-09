@@ -6,15 +6,19 @@ import (
 	"github.com/jkstack/anet"
 )
 
+// OnConnect on connect callback
 func (agent *Agent) OnConnect() {
 }
 
+// OnDisconnect on disconnect callback
 func (agent *Agent) OnDisconnect() {
 }
 
+// OnReportMonitor on report monitor callback
 func (agent *Agent) OnReportMonitor() {
 }
 
+// OnMessage on receive message callback
 func (agent *Agent) OnMessage(msg *anet.Msg) error {
 	switch msg.Type {
 	case anet.TypeFoo:
@@ -27,6 +31,7 @@ func (agent *Agent) OnMessage(msg *anet.Msg) error {
 	return nil
 }
 
+// LoopWrite loop write
 func (agent *Agent) LoopWrite(ctx context.Context, ch chan *anet.Msg) error {
 	for {
 		select {
