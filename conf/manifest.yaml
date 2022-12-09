@@ -44,7 +44,7 @@
     zh: 日志文件大小
   desc:
     zh: 日志文件滚动分割时的文件大小，仅当log.target中配置了file时有效
-  required: false
+  required: true
   default: 10M
   enabled:
     when:
@@ -57,7 +57,7 @@
     zh: 日志文件份数
   desc:
     zh: 日志文件滚动分割时保留的份数，仅当log.target中配置了file时有效
-  required: false
+  required: true
   default: 7
   enabled:
     when:
