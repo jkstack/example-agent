@@ -1,15 +1,15 @@
 {
     "FixedFileInfo": {
         "FileVersion": {
-            "Major": 1,
-            "Minor": 0,
-            "Patch": 12,
+            "Major": #MAJOR,
+            "Minor": #MINOR,
+            "Patch": #PATCH,
             "Build": 0
         },
         "ProductVersion": {
-            "Major": 1,
-            "Minor": 0,
-            "Patch": 12,
+            "Major": #MAJOR,
+            "Minor": #MINOR,
+            "Patch": #PATCH,
             "Build": 0
         },
         "FileFlagsMask": "3f",
@@ -22,14 +22,14 @@
         "Comments": "jkstack example agent",
         "CompanyName": "jkstack",
         "FileDescription": "jkstack example agent",
-        "FileVersion": "v1.0.12",
+        "FileVersion": "#VERSION",
         "InternalName": "example-agent",
         "LegalCopyright": "Copyright (c) 2022 jkstack",
         "LegalTrademarks": "",
         "OriginalFilename": "main.go",
         "PrivateBuild": "",
         "ProductName": "jkstack example agent",
-        "ProductVersion": "v1.0.12",
+        "ProductVersion": "#VERSION",
         "SpecialBuild": ""
     },
     "VarFileInfo": {
