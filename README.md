@@ -4,6 +4,7 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/jkstack/example-agent)](https://goreportcard.com/report/github.com/jkstack/example-agent)
 [![go-mod](https://img.shields.io/github/go-mod/go-version/jkstack/example-agent)](https://github.com/jkstack/example-agent)
 [![license](https://img.shields.io/github/license/jkstack/example-agent)](https://opensource.org/licenses/MIT)
+![downloads](https://img.shields.io/github/downloads/jkstack/example-agent/total)
 
 这是一个agent的示例，用于展示agent开发
 
